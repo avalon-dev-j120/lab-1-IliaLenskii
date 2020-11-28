@@ -30,9 +30,9 @@ public class Task1 implements Task {
         Integer max = (Integer) Numbers.max(array);
         double avg = Numbers.avg(array);
 
-        System.out.println(">> min: "+ min);
-        System.out.println(">> max: "+ max);
-        System.out.println(">> max: "+ avg);
+        //System.out.println(">> min: "+ min);
+        //System.out.println(">> max: "+ max);
+        //System.out.println(">> max: "+ avg);
 
         /*
          * TODO(Студент): Выполните задание №1
