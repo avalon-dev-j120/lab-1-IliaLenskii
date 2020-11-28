@@ -23,11 +23,11 @@ public class Task5 implements Task {
      */
     @Override
     public void run() {
-        final int[] array = arrayFactory.getInstance(20);
+        //final int[] array = arrayFactory.getInstance(20);
 
-        List<Integer> list = null;
+        //List<Integer> list = null;
 
-        Set<Integer> set = null;
+        //Set<Integer> set = null;
 
         /**
          * TODO(Студент): Выполните задание №5

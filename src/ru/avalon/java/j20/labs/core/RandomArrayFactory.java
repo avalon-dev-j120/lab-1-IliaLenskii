@@ -6,7 +6,7 @@ import java.util.Random;
  * Фабрика, создающая массивы целых чисел, наполненные
  * случайными значениями.
  */
-public class RandomArrayFactory implements Factory<int[], Integer> {
+public class RandomArrayFactory implements Factory<Number[], Integer> {
 
     /**
      * Генератор псевдо-случайных чисел.
@@ -21,11 +21,15 @@ public class RandomArrayFactory implements Factory<int[], Integer> {
      * @return новый массив случайных чисел, заданной длины.
      */
     @Override
-    public int[] getInstance(Integer length) {
-        int[] array = new int[length];
-        for (int i = 0; i < length; i++) {
+    public Number[] getInstance(Integer length) {
+
+        Number[] array = new Number[ length ];
+
+        for (int i = 0; i < length; ++i) {
             array[i] = random.nextInt(101);
+            //array[i] = random.nextDouble();
         }
+
         return array;
     }
 }
