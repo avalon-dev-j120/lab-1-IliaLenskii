@@ -3,6 +3,8 @@ package ru.avalon.java.j20.labs.tasks;
 import ru.avalon.java.j20.labs.Task;
 import ru.avalon.java.j20.labs.core.RandomArrayFactory;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -23,11 +25,25 @@ public class Task5 implements Task {
      */
     @Override
     public void run() {
-        //final int[] array = arrayFactory.getInstance(20);
+        final Number[] array = arrayFactory.getInstance(20);
 
-        //List<Integer> list = null;
+        List<Integer> tmp = new ArrayList<Integer>();
 
-        //Set<Integer> set = null;
+        for(int i = 0; i < array.length; ++i)
+            tmp.add( array[i].intValue() );
+
+        List<Integer> list = new ArrayList<Integer>();
+
+        list.addAll(tmp);
+
+        /*
+        интерфейсе Set определяется множество.
+        Он расширяет интерфейс Collection и определяет
+        поведение коллекций, не допускающих дублирования элементов.
+         */
+        Set<Integer> set = new HashSet<>();
+        set.addAll(tmp);
+
 
         /**
          * TODO(Студент): Выполните задание №5
