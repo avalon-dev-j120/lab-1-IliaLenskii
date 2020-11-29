@@ -1,5 +1,7 @@
 package ru.avalon.java.j20.labs.models;
 
+import java.util.Objects;
+
 /**
  * Представление о человеке.
  */
@@ -31,7 +33,7 @@ public class Person {
      * @return имя человека
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**
@@ -40,6 +42,24 @@ public class Person {
      * @return фамилия человека
      */
     public String getSurname() {
-        return surname;
+        return this.surname;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+
+        if (o == null || this.getClass() != o.getClass())
+            return false;
+
+        Person p = (Person) o;
+
+        return this.name.equals(p.getName()) && this.surname.equals(p.getSurname());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.name, this.surname);
     }
 }
