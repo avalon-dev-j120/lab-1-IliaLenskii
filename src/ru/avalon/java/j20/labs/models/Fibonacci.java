@@ -1,6 +1,7 @@
 package ru.avalon.java.j20.labs.models;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Модель получения последовательности чисел Фибоначчи.
@@ -18,11 +19,69 @@ import java.util.Iterator;
  */
 public class Fibonacci implements Iterable<Integer> {
 
+    private int length = 0;
+    private final int MAXLENGTH = 20;
+    private int arrFib[] = new int[MAXLENGTH];
+
+    public Fibonacci(int length) {
+
+        this.length = length;
+
+        this.initialize();
+    }
+
+    /**
+     * Выполняет инициализацию массива значениями
+     * последовательности Фибоначчи.
+     *
+     */
+    private void initialize() {
+
+        if(this.length < 1)
+            return;
+
+        int n0 = 1;
+        int n1 = 1;
+        int n2 = 0;
+
+        this.arrFib[0] = n0;
+        this.arrFib[1] = n1;
+
+        for(int i = 2; i < this.length; ++i) {
+            n2 = n0 + n1;
+
+            this.arrFib[i] = n2;
+
+            n0 = n1;
+            n1 = n2;
+        }
+    }
+
+    public int[] getArrFib() {
+
+        return this.arrFib;
+    }
+
+    public int getSum() {
+        int sum = 0;
+
+        for (int i = 0; i < this.arrFib.length; ++i)
+            sum += this.arrFib[i];
+
+        return sum;
+    }
+
     /**
      * Итератор, выполняющий обход последовательности
      * чисел Фибоначчи.
      */
-    private static class FibonacciIterator implements Iterator<Integer> {
+    private class FibonacciIterator implements Iterator<Integer> {
+
+        private Integer curr;
+
+        public FibonacciIterator() {
+            this.curr = 0;
+        }
 
         /**
          * Определяет, есть ли следующее значение
@@ -34,7 +93,9 @@ public class Fibonacci implements Iterable<Integer> {
          */
         @Override
         public boolean hasNext() {
-            throw new UnsupportedOperationException("Not implemented yet!");
+            int[] mArr = Fibonacci.this.getArrFib();
+
+            return this.curr < mArr.length;
         }
 
         /**
@@ -45,7 +106,22 @@ public class Fibonacci implements Iterable<Integer> {
          */
         @Override
         public Integer next() {
-            throw new UnsupportedOperationException("Not implemented yet!");
+
+            if (!this.hasNext())
+                throw new NoSuchElementException();
+
+            int[] mArr = Fibonacci.this.getArrFib();
+
+            Integer curEl = mArr[this.curr];
+
+            ++this.curr;
+
+            return curEl;
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
         }
     }
 
@@ -57,6 +133,7 @@ public class Fibonacci implements Iterable<Integer> {
      */
     @Override
     public Iterator<Integer> iterator() {
+
         return new FibonacciIterator();
     }
 }

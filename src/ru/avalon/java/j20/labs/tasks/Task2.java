@@ -19,7 +19,7 @@ public class Task2 implements Task {
         Point<Float, Float> p1 = new Point<>(1.5F, 2.5F);
         Point<Integer, Integer> p2 = new Point<>(1, 2);
 
-        System.out.println(">> "+ p1.distanceTo(p2));
+        //System.out.println(">> "+ p1.distanceTo(p2));
 
 
         /*

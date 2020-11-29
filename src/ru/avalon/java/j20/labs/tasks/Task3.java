@@ -1,6 +1,7 @@
 package ru.avalon.java.j20.labs.tasks;
 
 import ru.avalon.java.j20.labs.Task;
+import ru.avalon.java.j20.labs.models.Fibonacci;
 
 import java.util.Iterator;
 
@@ -13,6 +14,24 @@ public class Task3 implements Task {
 
     @Override
     public void run() {
+
+        Fibonacci fib = new Fibonacci(20);
+        Iterator<Integer> fibIterator = fib.iterator();
+
+        //int[] mArr = fib.getArrFib();
+        //for(int i = 0; i < mArr.length; ++i)
+        //    System.out.print( mArr[i] +" "+ (i % 6 == 0 ? '\n' : ""));
+
+        //System.out.println("sum: "+ fib.getSum());
+
+        Integer s = 0;
+
+        for (Iterator<Integer> it = fibIterator; it.hasNext(); ) {
+            s += it.next();
+        }
+
+        //System.out.println("sum2: "+ s );
+
         /*
          * TODO(Студент): Выполнить задание №3
          *
