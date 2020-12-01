@@ -1,7 +1,6 @@
 package ru.avalon.java.j20.labs.tasks;
 
 import ru.avalon.java.j20.labs.Task;
-import ru.avalon.java.j20.labs.models.Person;
 import ru.avalon.java.j20.labs.userExeptions.*;
 
 import java.lang.CloneNotSupportedException;

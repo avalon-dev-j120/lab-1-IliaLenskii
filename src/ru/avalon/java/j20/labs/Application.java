@@ -5,8 +5,8 @@ import ru.avalon.java.j20.labs.tasks.*;
 /**
  * Лабораторная работа №1
  *
- * по курсу: "DEV-J20. Программирование на платформе Java.
- * Стандартные пакеты"
+ * Напишите реализацию методов класса StringService
+ *
  */
 public class Application {
 
@@ -20,7 +20,8 @@ public class Application {
         new Task3(),
         new Task4(),
         new Task5(),
-        new User()
+        new User(),
+        new StringService()
     };
 
     /**
