@@ -43,7 +43,7 @@ public class StringService implements Task {
         }
         */
 
-        char uniqChar[] = getCharStat("aaaaqqww");
+        //char uniqChar[] = getCharStat("aaaaqqww");
     }
 
     /**
@@ -95,7 +95,6 @@ public class StringService implements Task {
             uniqChar.add( str.charAt(i) );
 
         char res[] = new char[ uniqChar.size() ];
-
         int iarr[] = new int[]{0};
 
         uniqChar.forEach(itm -> {
